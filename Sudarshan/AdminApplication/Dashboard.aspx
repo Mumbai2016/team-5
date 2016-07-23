@@ -159,11 +159,11 @@ display: table;
                 <div class="widget-content">
                   <h6 class="bigstats"></h6>
                   <div id="big_stats" class="cf">
-                    <div class="stat"> <i class="">Total Due (&#8377;)</i> <span class="value"  id="user" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Admin</i> <span class="value"  id="admin" runat="server">0</span> </div>
                     <!-- .stat -->
-                    <div class="stat"> <i class="">Paid Today(&#8377;)</i> <span class="value" id="advice" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Mentor</i> <span class="value" id="mentor" runat="server">0</span> </div>
 
-                    <div class="stat"> <i class="">Total Client</i> <span class="value"  id="contact" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Mentee</i> <span class="value"  id="mentee" runat="server">0</span> </div>
                     <!-- .stat -->
                     <%--<div class="stat"> <i class="icon-arrow-up"></i> <span class="value" id="trans" runat="server">0</span> </div>--%>
                     <!-- .stat -->
