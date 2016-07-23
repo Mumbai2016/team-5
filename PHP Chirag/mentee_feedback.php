@@ -7,6 +7,8 @@ $meet_date=$_GET['meet_date'];
 //echo "$date";
 
 $_SESSION['mentee_id']=1;
+
+
 $minutes= $_GET['minutes'];
 $interact= $_GET['interact'];
 $fruitful= $_GET['fruitful'];
@@ -53,8 +55,8 @@ else
 echo "Details incorrect.";
 }
 
+/*
 ?>
-
 <html>
 <body>
 
@@ -145,3 +147,7 @@ echo "Details incorrect.";
 
 </body>
 </html>
+
+*/
+
+?>

@@ -7,6 +7,8 @@ $meet_date=$_GET['meet_date'];
 //echo "$date";
 
 $_SESSION['mentor_id']=1;
+
+
 $minutes= $_GET['minutes'];
 $interact= $_GET['interact'];
 $fruitful= $_GET['fruitful'];
@@ -22,8 +24,8 @@ $row=mysqli_fetch_assoc($run_query);
 $mentee_id=$row['mentee_id'];
 
 //echo  $mentee_id."  ";
-//$meet_date= $_SERVER['REQUEST_TIME'];
-//$meet_time= $_SERVER['REQUEST_TIME'];
+$meet_date= $_GET['meet_date'];
+$meet_time= $_SERVER['REQUEST_TIME'];
 
 //echo $meet_date." ".$meet_time;
 //$query2="INSERT INTO `meeting`(`mentor_id`, `mentee_id`, `meet_time`, `status`, `meet_date`, `created_by`, `edited_by`, `created_at`, `edited_at`) VALUES ('$mentor_id','$mentee_id',now(),1,now(),'chirag','chirag',now(),now())";
@@ -52,11 +54,56 @@ echo "Inserted";
 else
 echo "Details incorrect.";
 }
+else
+echo "Details not set";
 
+
+/*
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
 <body>
+
+
+<div class="container-fluid " >
+
+<!-- Navbar section -->
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header ">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mentor</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="donate.php">Donate</a></li>
+        <li><a href="contactus.php">Contact Us</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!---Navbar section ends-->
+
 
     <form action="mentor_feedback.php" action="GET">
         <table>
@@ -143,5 +190,13 @@ echo "Details incorrect.";
         <input type="submit"></input>
     </form>
 
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
+*/
+
+?>
