@@ -4,7 +4,7 @@
 
 <html>
     <head id="Head1" runat="server">
-    <title>LogiKart</title>
+    <title>katalyst</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,7 +66,7 @@
           <ul class="dropdown-menu">
             <li><a href="ViewMentee.aspx">Add Mentee</a></li>
             <li><a href="ViewMentee.aspx">View Mentee</a></li>
-            <li><a href="ViewMentee.aspx">Excel Add</a></li>
+            <li><a href="ExcelMentee.aspx">Excel Add</a></li>
           </ul>
         </li>
 
@@ -238,7 +238,7 @@
                                        	
 										<div class="form-actions">
 											
-                                            <asp:Button ID="Button1" runat="server" Text="Add Admin" class="btn btn-primary" 
+                                            <asp:Button ID="Button1" runat="server" Text="Add Mentor" class="btn btn-primary" 
                                                 onclick="Button1_Click"/>
                                             
 											
