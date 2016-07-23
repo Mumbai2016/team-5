@@ -65,7 +65,7 @@
           <ul class="dropdown-menu">
             <li><a href="ViewMentee.aspx">Add Mentee</a></li>
             <li><a href="ViewMentee.aspx">View Mentee</a></li>
-            <li><a href="ViewMentee.aspx">Excel Add</a></li>
+            <li><a href="ExcelMentee.aspx">Excel Add</a></li>
           </ul>
         </li>
 

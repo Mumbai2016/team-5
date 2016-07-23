@@ -25,7 +25,7 @@ public partial class Admin_Dashboard : System.Web.UI.Page
             }
             else
             {
-               // getstat();
+                getstat();
                 //getdiscussion();
                // bindChart();
             }
@@ -34,15 +34,27 @@ public partial class Admin_Dashboard : System.Web.UI.Page
     }
     protected void getstat()
     {
-        MySqlCommand _cmd = new MySqlCommand("Dashboard", _con);
-        _cmd.CommandType = CommandType.StoredProcedure;
+        MySqlCommand _cmd = new MySqlCommand("select count(*),type from user_detail group by type", _con);
+       
         MySqlDataAdapter _adp = new MySqlDataAdapter(_cmd);
         DataTable _dt = new DataTable();
         _adp.Fill(_dt);
-        user.InnerText = "" + _dt.Rows[0][0].ToString();
-        contact.InnerText = _dt.Rows[0][1].ToString();
+        for (int i = 0; i < _dt.Rows.Count; i++) {
+            if (_dt.Rows[i][0].ToString().Equals("ADMIN")) {
+                admin.InnerText = "" + _dt.Rows[i][1].ToString();
+            }
+            if (_dt.Rows[i][0].ToString().Equals("mentor")) {
+                mentor.InnerText = _dt.Rows[i][1].ToString();
+            }
+            if (_dt.Rows[i][0].ToString().Equals("mentee"))
+            {
+                mentee.InnerText = _dt.Rows[i][1].ToString();
+            }
+        }
+            
+        
         //trans.InnerText = _dt.Rows[0][2].ToString();
-        advice.InnerText = _dt.Rows[0][3].ToString();
+        
     }
     
     StringBuilder str = new StringBuilder();

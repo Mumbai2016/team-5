@@ -42,6 +42,9 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+.xyz{
+  color: #3e493e;
+}
 .container_1{
   padding: 0px;
   margin: 0px;
@@ -55,7 +58,7 @@ p {
 }
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
-  text-align: left;
+  text-align: justify;
 }
 .centering{
    text-align: left;

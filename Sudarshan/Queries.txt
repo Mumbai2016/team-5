@@ -1,3 +1,13 @@
 insert into user_detail(username,`PASSWORD`,type,fkid,created_by,edited_by,created_date,edited_date) values('sudarshan','sudarshan','ADMIN',1,1,1,NOW(),NOW());
 
 insert into admin(name,email,password) values('sudarshan','sudarshan@ves.ac.in','sudarshan');
+
+Expeience Detail has been added
+table Mentor
+Totalworkexp decimal
+timeinvestment decimal
+Mentor Chnages dob as date
+
+
+Mentee 
+menteeid as primary keyand auto incrament
