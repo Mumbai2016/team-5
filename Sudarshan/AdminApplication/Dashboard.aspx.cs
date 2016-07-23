@@ -25,7 +25,7 @@ public partial class Admin_Dashboard : System.Web.UI.Page
             }
             else
             {
-               // getstat();
+               getstat();
                 //getdiscussion();
                // bindChart();
             }
