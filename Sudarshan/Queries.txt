@@ -1,0 +1,2 @@
+insert into user_detail(username,`PASSWORD`,type,fkid,created_by,edited_by,created_date,edited_date) values('sudarshan','sudarshan','ADMIN',1,1,1,NOW(),NOW());
+
