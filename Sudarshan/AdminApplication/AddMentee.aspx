@@ -1,9 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddAdmin.aspx.cs" Inherits="AddAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddMentee.aspx.cs" Inherits="AddMentee" %>
 
 <!DOCTYPE html>
-<html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
     <head id="Head1" runat="server">
-    <title>LogiKart</title>
+    <title>katalyst</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -101,7 +103,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>Add Admin</h3>
+	      				<h3>Add Mentee</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
@@ -110,13 +112,38 @@
 										
                                         
                                                     <div class="control-group">											
-											<label class="control-label" for="firstname">Enter Admin Name</label>
+											<label class="control-label" for="firstname">Enter First Name</label>
 											<div class="controls">
                                             
                                                 <asp:TextBox ID="txtname" runat="server" class="span3"></asp:TextBox>
 											</div> <!-- /controls -->				
 										</div>
-                                                
+                                               
+                                        <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Last Name</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtlastname" runat="server" class="span3"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
+                                        
+                                        
+                                       <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Address</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtaddress" runat="server" class="span5" Rows="4" TextMode="MultiLine"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
+
+                                        <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Date Of Birth</label>
+											<div class="controls">
+                                            
+                                                <input type="text" ID="example1" runat="server" class="span3"></input>
+											</div> <!-- /controls -->				
+										</div>
+
 										<div class="control-group">											
 											<label class="control-label" for="firstname">Enter EmailID</label>
 											<div class="controls">
@@ -124,7 +151,7 @@
                                                 <asp:TextBox ID="txtemailid" runat="server" class="span6" style=""></asp:TextBox>
 											</div> <!-- /controls -->				
 										</div>
-										</td><td>
+										
                                         <div class="control-group">											
 											<label class="control-label" for="firstname">Password</label><div class="controls">
                                             
@@ -133,7 +160,30 @@
 										</div>
                                         
                                        
+                                            <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Mobile Number</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtmobile" runat="server" class="span3"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
 
+                                             <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Organization</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtorg" runat="server" class="span5"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
+
+                                            <div class="control-group">											
+											<label class="control-label" for="firstname">Enter Annual Income</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtincome" runat="server" class="span3"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
+                                            
                                         <div>
                                             
                                         </div>
@@ -141,7 +191,7 @@
                                        	
 										<div class="form-actions">
 											
-                                            <asp:Button ID="Button1" runat="server" Text="Add Admin" class="btn btn-primary" 
+                                            <asp:Button ID="Button1" runat="server" Text="Add Mentee" class="btn btn-primary" 
                                                 onclick="Button1_Click"/>
                                             
 											
@@ -198,3 +248,4 @@
             }
         </script>
 
+</html>

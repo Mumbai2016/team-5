@@ -1,24 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddAdmin.aspx.cs" Inherits="AddAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegisterAdmin.aspx.cs" Inherits="RegisterAdmin" %>
 
 <!DOCTYPE html>
-<html>
-    <head id="Head1" runat="server">
-    <title>LogiKart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
-        rel="stylesheet">
-<link href="css/font-awesome.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="css/datepicker.css" />
 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
 </head>
 <body>
-<form id="form1" runat="server">
-<div class="navbar navbar-fixed-top">
+    <form id="form1" runat="server">
+    <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="#" target="_blank">Katalyst </a>
@@ -101,39 +91,48 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>Add Admin</h3>
+	      				<h3>Register Admin</h3>
 	  				</div> <!-- /widget-header -->
 					
 					<div class="widget-content">
+					
 									<fieldset>
 										<p id="erro" runat="server" class="error-details alert"></p>
 										
-                                        
-                                                    <div class="control-group">											
-											<label class="control-label" for="firstname">Enter Admin Name</label>
-											<div class="controls">
-                                            
-                                                <asp:TextBox ID="txtname" runat="server" class="span3"></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
-                                                
-										<div class="control-group">											
-											<label class="control-label" for="firstname">Enter EmailID</label>
-											<div class="controls">
-                                            
-                                                <asp:TextBox ID="txtemailid" runat="server" class="span6" style=""></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
-										</td><td>
+										
                                         <div class="control-group">											
-											<label class="control-label" for="firstname">Password</label><div class="controls">
+											<label class="control-label" for="firstname">Admin Name</label>
+											<div class="controls">
                                             
-                                                <asp:TextBox ID="txtpasswd" runat="server" class="span3" style=""></asp:TextBox>
+                                                <asp:TextBox ID="txtname" runat="server" class="span4" style="text-transform:uppercase;"></asp:TextBox>
 											</div> <!-- /controls -->				
 										</div>
+                                        <div class="control-group">											
+											<label class="control-label" for="firstname">Email ID</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtemailid" runat="server" class="span5" style="text-transform:uppercase;"></asp:TextBox>
+											    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                                                    ControlToValidate="txtemailid" ErrorMessage="RegularExpressionValidator" 
+                                                    ForeColor="Red" SetFocusOnError="True" 
+                                                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*Enter Valid Email ID</asp:RegularExpressionValidator>
+											</div> <!-- /controls -->				
+										</div>
+                                        
+                                         <div class="control-group">											
+											<label class="control-label" for="firstname">Password</label>
+											<div class="controls">
+                                            
+                                                <asp:TextBox ID="txtpasswd" runat="server" class="span3" style="text-transform:uppercase;"></asp:TextBox>
+											</div> <!-- /controls -->				
+										</div>
+                
                                         
                                        
-
+                                        
+									
+                                       
+                                        
                                         <div>
                                             
                                         </div>
@@ -147,6 +146,14 @@
 											
 										</div> <!-- /form-actions -->
 									</fieldset>
+								
+								
+								
+								
+								
+						
+						
+						
 						
 					</div> <!-- /widget-content -->
 						
@@ -154,9 +161,8 @@
 	      		
 		    </div> <!-- /span8 -->
 	      	
-	      	<!--Excel Upload -->
-
-                 
+	      	
+	      	
 	      	
 	      </div> <!-- /row -->
 	
@@ -166,35 +172,6 @@
     
 </div>
 
-
-
     </form>
 </body>
-
-
-    <!-- javascript for runtime -->
-    <script src="js/jquery-1.7.2.min.js"></script> 
-<script src="js/excanvas.min.js"></script> 
-<script src="js/chart.min.js" type="text/javascript"></script> 
-<script src="js/bootstrap.js"></script>
-<script language="javascript" type="text/javascript" src="js/full-calendar/fullcalendar.min.js"></script>
- 
-<script src="js/base.js"></script> 
-        <script src="js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript">
-            // When the document is ready
-            function pageLoad() {
-                $(document).ready(function () {
-
-                    $('#example1').datepicker({
-                        format: "dd-mm-yyyy"
-                    });
-
-                    $('#example2').datepicker({
-                        format: "dd-mm-yyyy"
-                    });
-
-                });
-            }
-        </script>
-
+</html>

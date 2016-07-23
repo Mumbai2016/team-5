@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddAdmin.aspx.cs" Inherits="AddAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ExcelMentee.aspx.cs" Inherits="ExcelMentee" %>
 
 <!DOCTYPE html>
+
 <html>
     <head id="Head1" runat="server">
     <title>LogiKart</title>
@@ -18,7 +19,7 @@
 </head>
 <body>
 <form id="form1" runat="server">
-<div class="navbar navbar-fixed-top">
+ <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="#" target="_blank">Katalyst </a>
@@ -87,6 +88,7 @@
   </div>
   <!-- /subnavbar-inner --> 
 </div>
+
 <div class="main">
 	
 	<div class="main-inner">
@@ -101,48 +103,40 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>Add Admin</h3>
+	      				<h3>Add Mentor through Excel</h3>
 	  				</div> <!-- /widget-header -->
 					
+				</div> <!-- /widget -->
+	      		
+		    </div> <!-- /span8 -->
+	      	
+	      	<!--Excel Upload -->
+
+                  <div class="span12">      		
+	      		
+	      		<div class="widget ">
+	      			
+	      			
 					<div class="widget-content">
 									<fieldset>
 										<p id="erro" runat="server" class="error-details alert"></p>
 										
-                                        
-                                                    <div class="control-group">											
-											<label class="control-label" for="firstname">Enter Admin Name</label>
-											<div class="controls">
-                                            
-                                                <asp:TextBox ID="txtname" runat="server" class="span3"></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
-                                                
 										<div class="control-group">											
-											<label class="control-label" for="firstname">Enter EmailID</label>
+											<label class="control-label" for="firstname">Upload File</label>
 											<div class="controls">
                                             
-                                                <asp:TextBox ID="txtemailid" runat="server" class="span6" style=""></asp:TextBox>
-											</div> <!-- /controls -->				
+                                                <asp:FileUpload ID="flexcel" runat="server" />
+											</div> <!-- /controls -->	
+                                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Files/mentee.xlsx">Download Format</asp:HyperLink>			
 										</div>
-										</td><td>
-                                        <div class="control-group">											
-											<label class="control-label" for="firstname">Password</label><div class="controls">
-                                            
-                                                <asp:TextBox ID="txtpasswd" runat="server" class="span3" style=""></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
-                                        
+										
+
                                        
 
-                                        <div>
-                                            
-                                        </div>
-                                        
-                                       	
 										<div class="form-actions">
 											
-                                            <asp:Button ID="Button1" runat="server" Text="Add Admin" class="btn btn-primary" 
-                                                onclick="Button1_Click"/>
+                                            <asp:Button ID="btnupload" runat="server" Text="Upload Admin" class="btn btn-primary" 
+                                                onclick="btnupload_Click"/>
                                             
 											
 										</div> <!-- /form-actions -->
@@ -152,11 +146,9 @@
 						
 				</div> <!-- /widget -->
 	      		
-		    </div> <!-- /span8 -->
+		    </div>
+        <!-- Excell upload end ->
 	      	
-	      	<!--Excel Upload -->
-
-                 
 	      	
 	      </div> <!-- /row -->
 	
@@ -197,4 +189,4 @@
                 });
             }
         </script>
-
+</html>

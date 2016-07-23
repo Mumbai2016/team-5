@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddAdmin.aspx.cs" Inherits="AddAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ViewMentee.aspx.cs" Inherits="ViewMentee" %>
 
 <!DOCTYPE html>
-<html>
-    <head id="Head1" runat="server">
-    <title>LogiKart</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Create Customer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,11 +13,12 @@
         rel="stylesheet">
 <link href="css/font-awesome.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="css/datepicker.css" />
+<link href="css/pages/dashboard.css" rel="stylesheet">
 
 </head>
 <body>
-<form id="form1" runat="server">
+ <form id="form1" runat="server">
+ 
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
@@ -95,71 +96,69 @@
 	
 	      <div class="row">
 	      	
-	      	<div class="span12">      		
-	      		
-	      		<div class="widget ">
+	      	<div class="span12">
+                        <div class="widget ">
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3>Add Admin</h3>
+	      				<h3>Mentor Details</h3>
 	  				</div> <!-- /widget-header -->
-					
+                          
+                           
 					<div class="widget-content">
-									<fieldset>
-										<p id="erro" runat="server" class="error-details alert"></p>
-										
+						
+<!-- search control -->
+                                        <fieldset>
                                         
-                                                    <div class="control-group">											
-											<label class="control-label" for="firstname">Enter Admin Name</label>
-											<div class="controls">
-                                            
-                                                <asp:TextBox ID="txtname" runat="server" class="span3"></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
+                                          <div class="control-group">											
+											<label class="control-label" for="radiobtns">Enter initials of name</label>
+											
+                                            <div class="controls">
+                                               <div class="control-label">
+                                                  
+                                                   <asp:TextBox ID="txtsearch" runat="server" class="span3"></asp:TextBox>
+                                                  
+                                                </div>
+                                                <asp:Button ID="btnsearch" runat="server" Text="Search" class="btn" 
+                                                       onclick="btnsearch_Click"/>
+                                                    <asp:Button ID="btnadd" runat="server" Text="Create" class="btn" 
+                                                    onclick="btnadd_Click"/>
                                                 
-										<div class="control-group">											
-											<label class="control-label" for="firstname">Enter EmailID</label>
-											<div class="controls">
-                                            
-                                                <asp:TextBox ID="txtemailid" runat="server" class="span6" style=""></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
-										</td><td>
-                                        <div class="control-group">											
-											<label class="control-label" for="firstname">Password</label><div class="controls">
-                                            
-                                                <asp:TextBox ID="txtpasswd" runat="server" class="span3" style=""></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
+                                              </div>	<!-- /controls -->
+                                              <label class="control-label" for="radiobtns" id="warning" runat="server" style="color:Red;font-style:bold;"></label>
+										</div> <!-- /control-group -->
                                         
-                                       
+                                        </fieldset>
 
-                                        <div>
-                                            
-                                        </div>
-                                        
-                                       	
-										<div class="form-actions">
-											
-                                            <asp:Button ID="Button1" runat="server" Text="Add Admin" class="btn btn-primary" 
-                                                onclick="Button1_Click"/>
-                                            
-											
-										</div> <!-- /form-actions -->
-									</fieldset>
-						
-					</div> <!-- /widget-content -->
-						
-				</div> <!-- /widget -->
-	      		
-		    </div> <!-- /span8 -->
-	      	
-	      	<!--Excel Upload -->
+                    </div>
 
-                 
+                    <asp:GridView ID="gvcust" runat="server" 
+                CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No Mentee found">
+                <Columns>
+                    <asp:BoundField DataField="name" HeaderText="Name" />
+                    <asp:BoundField DataField="emailid" HeaderText="Email" />
+                 <asp:BoundField DataField="mobileno" HeaderText="Mobile" />
+                    <asp:BoundField DataField="organization" HeaderText="Organization" />
+                   
+                   <asp:TemplateField HeaderText="Update">
+                        <ItemTemplate>
+                            <asp:Button ID="Button2" runat="server" Text="Update" 
+                                class="btn btn-small btn-success" CommandArgument='<%# Eval("mentee_id") %>' onclick="Button2_Click" 
+                                />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                     
+                </Columns>
+                
+            </asp:GridView>
+                   
+                    </div>
+                                         </div> <!-- /span8 -->
 	      	
 	      </div> <!-- /row -->
-	
+            
+                 
+            
 	    </div> <!-- /container -->
 	    
 	</div> <!-- /main-inner -->
@@ -169,7 +168,7 @@
 
 
     </form>
-</body>
+
 
 
     <!-- javascript for runtime -->
@@ -180,21 +179,5 @@
 <script language="javascript" type="text/javascript" src="js/full-calendar/fullcalendar.min.js"></script>
  
 <script src="js/base.js"></script> 
-        <script src="js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript">
-            // When the document is ready
-            function pageLoad() {
-                $(document).ready(function () {
-
-                    $('#example1').datepicker({
-                        format: "dd-mm-yyyy"
-                    });
-
-                    $('#example2').datepicker({
-                        format: "dd-mm-yyyy"
-                    });
-
-                });
-            }
-        </script>
-
+</body>
+</html>
