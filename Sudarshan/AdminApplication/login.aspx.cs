@@ -60,8 +60,7 @@ public partial class login : System.Web.UI.Page
             {
                 MySqlCommand _cmd = new MySqlCommand("select fkid from user_detail where username ='"+user+"' AND password like '"+pass+"' ", _con);
                 
-                _cmd.Parameters.AddWithValue("@username", user);
-                _cmd.Parameters.AddWithValue("@passwd", pass);
+                
                 MySqlDataAdapter _da = new MySqlDataAdapter(_cmd);
                 DataTable _dt = new DataTable();
                 _da.Fill(_dt);
