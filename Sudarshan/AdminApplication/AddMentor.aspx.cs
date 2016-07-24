@@ -61,7 +61,7 @@ public partial class AddMentor : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         string error = "";
-        string emailid = "", passw = "", fname = "", lname = "", mname = "", dob = "", address = "",password="",mobileno="" ;
+        string emailid = "", passw = "", fname = "", lname = "", mname = "", dob = "", address = "",password="",mobileno="",compname="" ;
         double exp = 0,time=0;
 
         if (txtname.Text != "")
@@ -73,6 +73,14 @@ public partial class AddMentor : System.Web.UI.Page
             error += "First Name must be defined <br>";
         }
 
+        if (txtcompname.Text != "")
+        {
+            compname = txtcompname.Text.Trim().ToUpper();
+        }
+        else
+        {
+            error += "Company Name must be defined <br>";
+        }
 
         if (txtlastname.Text != "")
         {
@@ -190,7 +198,7 @@ public partial class AddMentor : System.Web.UI.Page
             _cmd.Parameters.AddWithValue("@workexp", exp);
             _cmd.Parameters.AddWithValue("@int_time",time);
             _cmd.Parameters.AddWithValue("@stat", Convert.ToInt32(Request.Cookies["mentor"].Value));
-
+            _cmd.Parameters.AddWithValue("@comp", compname);
 
             _con.Open();
             _cmd.ExecuteNonQuery();
@@ -204,16 +212,4 @@ public partial class AddMentor : System.Web.UI.Page
     }
 
 
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-        DataTable dt = new DataTable();
-        if (gvcust.Rows.Count > 0)
-        {
-
-        }
-        else
-        { 
-            
-        }
-    }
 }

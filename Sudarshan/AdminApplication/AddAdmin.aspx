@@ -70,13 +70,13 @@
         </li>
 
           <li><a href="Viewpairs.aspx"><i class="icon-dashboard"></i><span>Create Pairs</span> </a> </li>
-           <li><a href="Viewmeeting.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
+           <li><a href="Showmeet.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
         
   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Report</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="meeting.aspx">Meeting</a></li>
+            <li><a href="Viewmeeting.aspx">Meeting</a></li>
             
-            <li><a href="feedback.aspx">Feedback</a></li>
+            <li><a href="performance.aspx">performance</a></li>
             
           </ul>
         </li>

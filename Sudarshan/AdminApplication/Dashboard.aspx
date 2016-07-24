@@ -104,13 +104,13 @@
         </li>
 
           <li><a href="Viewpairs.aspx"><i class="icon-dashboard"></i><span>Create Pairs</span> </a> </li>
-           <li><a href="Viewmeeting.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
+           <li><a href="Showmeet.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
         
   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Report</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="meeting.aspx">Meeting</a></li>
+            <li><a href="Viewmeeting.aspx">Meeting</a></li>
             
-            <li><a href="feedback.aspx">Feedback</a></li>
+            <li><a href="performance.aspx">performance</a></li>
             
           </ul>
         </li>
@@ -198,9 +198,9 @@
                                 <i><img src="images/current.png"/></i><span class="shortcut-label">View meeting</span> </a>
                                 <a href="view_designation.aspx" class="shortcut">
                                 <i><img src="images/fund.png"/></i><span class="shortcut-label">Meeting Report</span> </a>
-                                <a href="view_semester.aspx" class="shortcut">
-                                <i ><img src="images/expert.png"/></i> <span class="shortcut-label">Feeedback report</span> </a>
-                                <a href="choice.aspx" class="shortcut">
+                                <a href="performance.aspx"   class="shortcut">
+                                <i ><img src="images/expert.png"/></i> <span class="shortcut-label">Performance report</span> </a>
+                                <a href="loginsession.aspx" class="shortcut">
                                 <i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Login Session</span> </a> 
                </div>
               <!-- /shortcuts --> 

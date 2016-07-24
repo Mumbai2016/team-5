@@ -72,13 +72,13 @@
         </li>
 
           <li><a href="Viewpairs.aspx"><i class="icon-dashboard"></i><span>Create Pairs</span> </a> </li>
-           <li><a href="Viewmeeting.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
+           <li><a href="Showmeet.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
         
   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Report</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="meeting.aspx">Meeting</a></li>
+            <li><a href="Viewmeeting.aspx">Meeting</a></li>
             
-            <li><a href="feedback.aspx">Feedback</a></li>
+            <li><a href="performance.aspx">performance</a></li>
             
           </ul>
         </li>
@@ -142,7 +142,7 @@
                                                     <tr>
                                                         <td colspan="2">
                                                             
-                                                <asp:Button ID="btnsearch" runat="server" Text="Search" class="btn btn-primary" 
+                                                <asp:Button ID="btnsearch" runat="server" Text="Download as Excel" class="btn btn-primary" 
                                                        onclick="btnsearch_Click"/>
                                                 
                                                         </td>
@@ -162,11 +162,11 @@
                     <asp:GridView ID="gvcust" runat="server" 
                 CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No meetings found">
                 <Columns>
-                    <asp:BoundField DataField="name" HeaderText="Mentee Name" />
-                    <asp:BoundField DataField="emailid" HeaderText="Mentor name" />
-                 <asp:BoundField DataField="mobileno" HeaderText="Date" />
-                    <asp:BoundField DataField="organization" HeaderText="Time" />
-                    <asp:BoundField DataField="organization" HeaderText="Location" />
+                    <asp:BoundField DataField="mentee" HeaderText="Mentee Name" />
+                    <asp:BoundField DataField="mentor" HeaderText="Mentor name" />
+                 <asp:BoundField DataField="meet_date" HeaderText="Date" />
+                    <asp:BoundField DataField="meet_time" HeaderText="Time" />
+                    <asp:BoundField DataField="meet_place" HeaderText="Location" />
                      
                 </Columns>
                 
