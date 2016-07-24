@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="container-fluid " >
+
+    <!-- Navbar section -->
+    <nav class="navbar navbar-default ">
+        <div class="container-fluid">
+            <div class="navbar-header ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Mentor</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="donate.php">Donate</a></li>
+                    <li><a href="contactus.php">Contact Us</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!---Navbar section ends-->
+
+
+
+    <form action="mentor_feedback.php" action="GET">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Date of meeting</label>
+            <input type="date" name="meet_date" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+
+        Rate the quality of meetings:
+        <div class="form-group">
+            <select class="form-control" name="rate">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+
+            Was the mentee able to interact well?
+            <div class="form-group">
+                <select class="form-control" name="interact">
+                    <option value=""></option>
+                    <option value="y">Yes</option>
+                    <option value="n">No</option>
+                </select>
+            </div>
+
+            Was the session fruitful?:
+
+            <div class="form-group">
+                <select class="form-control" name="fruitful">
+                    <option value=""></option>
+                    <option value="y">Yes</option>
+                    <option value="n">No</option>
+                </select>
+            </div>
+
+            Did the mentee take active interest?
+            <div class="form-group">
+                <select class="form-control" name="interest">
+                    <option value=""></option>
+                    <option value="y">Yes</option>
+                    <option value="n">No</option>
+                </select>
+            </div>
+
+            Was the mentee comfortable to interact?
+            <div class="form-group">
+                <select class="form-control" name="comfort">
+                    <option value=""></option>
+                    <option value="y">Yes</option>
+                    <option value="n">No</option>
+                </select>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="comment">Additional feedback:</label>
+                <textarea class="form-control" rows="5" name="feedback" id="comment"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="comment">Minutes of meeting:</label>
+                <textarea class="form-control" rows="5" name="minutes" id="comment"></textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+    </form>
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -72,11 +72,11 @@
         </li>
 
           <li><a href="Viewpairs.aspx"><i class="icon-dashboard"></i><span>Create Pairs</span> </a> </li>
-           <li><a href="Viewmeeting.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
+           <li><a href="Showmeet.aspx"><i class="icon-dashboard"></i><span>View Meetings</span> </a> </li>
         
   <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i><span>Report</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="meeting.aspx">Meeting</a></li>
+            <li><a href="Viewmeeting.aspx">Meeting</a></li>
             
             <li><a href="feedback.aspx">Feedback</a></li>
             
@@ -153,7 +153,7 @@
             </asp:GridView>
 
                             <br />
-                            <h3>Select Mentor</h3>
+                            <h3>Select Mentee</h3>
                     <asp:GridView ID="gvcust" runat="server" 
                 CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No Mentee found">
                 <Columns>
