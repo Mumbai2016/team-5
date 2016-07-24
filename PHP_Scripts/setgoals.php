@@ -48,7 +48,7 @@
 	        <div class="control-group" id="fields">
 	            <label class="control-label" for="field1">Mentee Form</label>
 	            <div class="controls" id="profs"> 
-	                <form class="input-append" action="menteesubmit.php">
+	                <form class="input-append" action="menteesubmit.php" method="GET">
 	                    <div id="field"><input autocomplete="off" class="input" id="field1" name="field1" type="text" placeholder="Type your goal here" data-items="8"/><button id="b1" class="btn add-more" type="button">Add Goals</button></div>
                         <input type="submit"/>
 	                </form>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Addpair.aspx.cs" Inherits="Addpair" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Viewmeeting.aspx.cs" Inherits="Viewmeeting" %>
 
 <!DOCTYPE html>
 
@@ -102,8 +102,7 @@
 	      			
 	      			<div class="widget-header">
 	      				<i class="icon-user"></i>
-	      				<h3 id="mentorname" runat="server">Assign Mentee</h3>
-                          <p id="location" runat="server"></p>
+	      				<h3>Recent Meetings to be Conduct</h3>
 	  				</div> <!-- /widget-header -->
                           
                            
@@ -113,16 +112,44 @@
                                         <fieldset>
                                         
                                           <div class="control-group">											
-											<label class="control-label" for="radiobtns">Enter initials of name of mentee to be assigned</label>
+											<label class="control-label" for="radiobtns">Select Criteria to get Meetings</label>
 											
                                             <div class="controls">
-                                               <div class="control-label">
-                                                  
-                                                   <asp:TextBox ID="txtsearch" runat="server" class="span3"></asp:TextBox>
-                                                  
-                                                </div>
-                                                <asp:Button ID="btnsearch" runat="server" Text="Search" class="btn" 
+                                                <table width="100%" class="table">
+                                                    <tr>
+                                                        <td>Select Month
+                                                            <asp:DropDownList ID="ddlmonth" runat="server">
+                                                                <asp:ListItem>Select Month</asp:ListItem>
+                                                                <asp:ListItem Value="1">januray</asp:ListItem>
+                                                                <asp:ListItem Value="2">February</asp:ListItem>
+                                                                <asp:ListItem Value="3">march</asp:ListItem>
+                                                                <asp:ListItem Value="4">April</asp:ListItem>
+                                                                <asp:ListItem Value="5">may</asp:ListItem>
+                                                                <asp:ListItem>June</asp:ListItem>
+                                                                <asp:ListItem>July</asp:ListItem>
+                                                                <asp:ListItem>August</asp:ListItem>
+                                                                <asp:ListItem>September</asp:ListItem>
+                                                                <asp:ListItem>October</asp:ListItem>
+                                                                <asp:ListItem>November</asp:ListItem>
+                                                                <asp:ListItem>December</asp:ListItem>
+                                                            </asp:DropDownList>
+                                                        </td>
+                                                        <td>Select Year
+                                                             <asp:DropDownList ID="ddlyear" runat="server"></asp:DropDownList>
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            
+                                                <asp:Button ID="btnsearch" runat="server" Text="Search" class="btn btn-primary" 
                                                        onclick="btnsearch_Click"/>
+                                                
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                  
+                                                    
                                                 
                                               </div>	<!-- /controls -->
                                               <label class="control-label" for="radiobtns" id="warning" runat="server" style="color:Red;font-style:bold;"></label>
@@ -130,45 +157,16 @@
                                         
                                         </fieldset>
 
-                    </div><br />
-                            <h3>Assigned mentee</h3>
-                            <asp:GridView ID="GridView1" runat="server" 
-                CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No Mentee Assigned">
-                <Columns>
-                    <asp:BoundField DataField="name" HeaderText="Name" />
-                    <asp:BoundField DataField="emailid" HeaderText="Email" />
-                 <asp:BoundField DataField="mobileno" HeaderText="Mobile" />
-                    <asp:BoundField DataField="organization" HeaderText="Organization" />
-                   
-                   <asp:TemplateField HeaderText="Remove">
-                        <ItemTemplate>
-                            <asp:Button ID="Button2" runat="server" Text="Remove" 
-                                class="btn btn-small btn-success" CommandArgument='<%# Eval("assign_id") %>' onclick="Button3_Click" 
-                                />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                     
-                </Columns>
-                
-            </asp:GridView>
+                    </div>
 
-                            <br />
-                            <h3>Select Mentee</h3>
                     <asp:GridView ID="gvcust" runat="server" 
-                CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No Mentee found">
+                CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No meetings found">
                 <Columns>
-                    <asp:BoundField DataField="name" HeaderText="Name" />
-                    <asp:BoundField DataField="emailid" HeaderText="Email" />
-                 <asp:BoundField DataField="mobileno" HeaderText="Mobile" />
-                    <asp:BoundField DataField="organization" HeaderText="Organization" />
-                   
-                   <asp:TemplateField HeaderText="Select">
-                        <ItemTemplate>
-                            <asp:Button ID="Button2" runat="server" Text="Select" 
-                                class="btn btn-small btn-success" CommandArgument='<%# Eval("mentee_id") %>' onclick="Button2_Click" 
-                                />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    <asp:BoundField DataField="name" HeaderText="Mentee Name" />
+                    <asp:BoundField DataField="emailid" HeaderText="Mentor name" />
+                 <asp:BoundField DataField="mobileno" HeaderText="Date" />
+                    <asp:BoundField DataField="organization" HeaderText="Time" />
+                    <asp:BoundField DataField="organization" HeaderText="Location" />
                      
                 </Columns>
                 

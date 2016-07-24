@@ -15,27 +15,6 @@
 <link href="css/style.css" rel="stylesheet">
 <link href="css/pages/dashboard.css" rel="stylesheet">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script src="http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js"
-type="text/javascript"></script>
-<style type="text/css">
-@import url("http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.css");
-
-#feedControl {
-display: table;
-    padding: 0 0.2em 0 .01em;
-    line-height: 20px;
-    font: 13px/1.7em 'Open Sans';
-}
-</style>
-<script type="text/javascript">
-    function load() {
-        var feed = "http://timesofindia.indiatimes.com/rssfeeds/1898055.cms";
-        new GFdynamicFeedControl(feed, "feedControl");
-
-    }
-    google.load("feeds", "1");
-    google.setOnLoadCallback(load);
-</script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
     <script type="text/javascript">
@@ -63,8 +42,8 @@ display: table;
             for (var i = 0; i < dataValues.length; i++) {
                 data.addRow([dataValues[i].ColumnName, dataValues[i].Value]);
             }
-            new google.visualization.PieChart(document.getElementById('visualization1')).
-                draw(data, { title: "Monthly payment Detail" });
+            new google.visualization.LineChart(document.getElementById('visualization1')).
+                draw(data, { title: "Monthly Meetings" });
         }        
     </script>
     
@@ -159,11 +138,11 @@ display: table;
                 <div class="widget-content">
                   <h6 class="bigstats"></h6>
                   <div id="big_stats" class="cf">
-                    <div class="stat"> <i class="">Total Due (&#8377;)</i> <span class="value"  id="user" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Admin</i> <span class="value"  id="admin" runat="server">0</span> </div>
                     <!-- .stat -->
-                    <div class="stat"> <i class="">Paid Today(&#8377;)</i> <span class="value" id="advice" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Mentor</i> <span class="value" id="mentor" runat="server">0</span> </div>
 
-                    <div class="stat"> <i class="">Total Client</i> <span class="value"  id="contact" runat="server">0</span> </div>
+                    <div class="stat"> <i class="">Mentee</i> <span class="value"  id="mentee" runat="server">0</span> </div>
                     <!-- .stat -->
                     <%--<div class="stat"> <i class="icon-arrow-up"></i> <span class="value" id="trans" runat="server">0</span> </div>--%>
                     <!-- .stat -->
@@ -180,7 +159,7 @@ display: table;
           
           <div class="widget">
             <div class="widget-header"> <i class="icon-signal"></i>
-              <h3>Monthly Payment Details</h3>
+              <h3>Monthly Meeting Details</h3>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
@@ -197,30 +176,62 @@ display: table;
           
 
         </div>
+          <div class="span6">
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-bookmark"></i>
+              <h3>Create Class Structure</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+              <div class="shortcuts"> 
+                                <a href="ViewAdmin.aspx" class="shortcut">
+                                <i><img src="images/insurance.png"/></i><span class="shortcut-label">Admin</span> </a>
+                                
+                                <a href="ViewMentor.aspx" class="shortcut">
+                                <i class="shortcut-icon icon-signal"></i> <span class="shortcut-label">Mentor</span> </a>
+                                <a href="ViewMentee.aspx" class="shortcut">
+                                <i><img src="images/fixed.png"/></i><span class="shortcut-label">Mentee</span> </a>
+                                <a href="Viewpairs.aspx" class="shortcut">
+                                <i><img src="images/mediclaim.png"/></i><span class="shortcut-label">Pairs</span> </a>
+                                
+                                <a href="view_classroom.aspx" class="shortcut">
+                                <i><img src="images/current.png"/></i><span class="shortcut-label">View meeting</span> </a>
+                                <a href="view_designation.aspx" class="shortcut">
+                                <i><img src="images/fund.png"/></i><span class="shortcut-label">Meeting Report</span> </a>
+                                <a href="view_semester.aspx" class="shortcut">
+                                <i ><img src="images/expert.png"/></i> <span class="shortcut-label">Feeedback report</span> </a>
+                                <a href="choice.aspx" class="shortcut">
+                                <i class="shortcut-icon icon-edit"></i><span class="shortcut-label">Login Session</span> </a> 
+               </div>
+              <!-- /shortcuts --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+          
+          
+      
+
+        
+        <!-- /span6 --> 
+      </div>
         <!-- /span6 -->
         <div class="span6">
             <div class="widget">
             <div class="widget-header"> <i class="icon-signal"></i>
-              <h3>Monthly payment Details</h3>
+              <h3>Mentor's performance Details</h3>
             </div>
             <!-- /widget-header -->
+               
             <div class="widget-content">
+                 <asp:DropDownList ID="ddlmentor" runat="server" DataTextField="name" DataValueField="mentor_id" AutoPostBack="True" OnSelectedIndexChanged="ddlmentor_SelectedIndexChanged"></asp:DropDownList>
             <asp:Literal ID="lt" runat="server"></asp:Literal>
-             <div id="divLineChart" height="450" width="538"></div>
+             <div id="chart_div" height="450" width="538"></div>
               
             </div>
             <!-- /widget-content --> 
           </div>
-       <div class="widget widget-nopad" style="height: 240px;">
-            <div class="widget-header"> <i class="icon-list-alt"></i>
-              <h3> Recent News</h3>
-            </div>
-            <!-- /widget-header -->
-            <div class="widget-content">
-              <div id="feedControl">Loading...</div>
-            </div>
-            <!-- /widget-content --> 
-          </div>
+       
 
 
           

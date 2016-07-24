@@ -198,5 +198,3 @@ echo "Details not set";
 </body>
 </html>
 */
-
-?>

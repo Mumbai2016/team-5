@@ -45,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `assign_mentor_mentee` (
   `mentee_id` int(5) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
-  `created_date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `edited_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `edited_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -114,12 +114,12 @@ CREATE TABLE IF NOT EXISTS `mentee` (
   `fname` varchar(30) NOT NULL,
   `sname` varchar(30) NOT NULL,
   `address` text NOT NULL,
-  `dob` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `dob` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `annual_income` bigint(15) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
   `created_date` date NOT NULL,
-  `edited_date` datetime(6) NOT NULL
+  `edited_date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -147,13 +147,13 @@ CREATE TABLE IF NOT EXISTS `mentee_feedback` (
 CREATE TABLE IF NOT EXISTS `mentee_qualification` (
   `mentee_id` int(5) NOT NULL,
   `course` varchar(30) NOT NULL,
-  `year` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `academic_year` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `year` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `academic_year` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
   `current` int(6) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
-  `created_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
-  `edited_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
+  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `edited_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `mentor` (
   `fname` varchar(40) NOT NULL,
   `sname` varchar(40) NOT NULL,
   `mname` varchar(40) NOT NULL,
-  `dob` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `dob` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `email` varchar(40) NOT NULL,
   `password` varchar(40) NOT NULL,
 `mentor_id` int(5) NOT NULL,
@@ -176,8 +176,8 @@ CREATE TABLE IF NOT EXISTS `mentor` (
   `time_investment` int(5) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
-  `created_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
-  `edited_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
+  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `edited_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -226,8 +226,8 @@ CREATE TABLE IF NOT EXISTS `user_detail` (
   `fkid` int(5) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
-  `created_date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `edited_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `edited_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000'
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
