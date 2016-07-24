@@ -18,7 +18,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
     <script type="text/javascript">
-        google.load('visualization', '1', { packages: ['corechart', 'line'] });
+        google.load('visualization', '1', { packages: ['corechart'] });
     </script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -42,7 +42,7 @@
             for (var i = 0; i < dataValues.length; i++) {
                 data.addRow([dataValues[i].ColumnName, dataValues[i].Value]);
             }
-            new google.visualization.PieChart(document.getElementById('visualization1')).
+            new google.visualization.LineChart(document.getElementById('visualization1')).
                 draw(data, { title: "Monthly Meetings" });
         }        
     </script>
@@ -219,13 +219,14 @@
         <div class="span6">
             <div class="widget">
             <div class="widget-header"> <i class="icon-signal"></i>
-              <h3>Monthly payment Details</h3>
+              <h3>Mentor's performance Details</h3>
             </div>
             <!-- /widget-header -->
-
+               
             <div class="widget-content">
+                 <asp:DropDownList ID="ddlmentor" runat="server" DataTextField="name" DataValueField="mentor_id" AutoPostBack="True" OnSelectedIndexChanged="ddlmentor_SelectedIndexChanged"></asp:DropDownList>
             <asp:Literal ID="lt" runat="server"></asp:Literal>
-             <div id="divLineChart" height="450" width="538"></div>
+             <div id="chart_div" height="450" width="538"></div>
               
             </div>
             <!-- /widget-content --> 
