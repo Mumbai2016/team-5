@@ -50,7 +50,7 @@ public partial class Viewmeeting : System.Web.UI.Page
         }
         if (ddlyear.SelectedIndex > 0)
         {
-            tablename += " and YEAR(m.meet_date)="+ddlyear.SelectedIndex.ToString()+" ";
+            tablename += " and YEAR(m.meet_date)="+ddlyear.SelectedItem.Text.ToString()+" ";
         }
         tablename += " order by m.meet_date desc";
         MySqlCommand _cmd = new MySqlCommand(tablename, _con);

@@ -77,7 +77,7 @@
           <ul class="dropdown-menu">
             <li><a href="Viewmeeting.aspx">Meeting</a></li>
             
-            <li><a href="feedback.aspx">Feedback</a></li>
+            <li><a href="performance.aspx">performance</a></li>
             
           </ul>
         </li>
@@ -191,46 +191,15 @@
 											<label class="control-label" for="firstname">Company Name</label>
 											<div class="controls">
                                             
-                                                <asp:TextBox ID="txtcompname" runat="server" class="span3"></asp:TextBox>
+                                                <asp:TextBox ID="txtcompname" runat="server" class="span6"></asp:TextBox>
 											</div> <!-- /controls -->				
 										</div>
                                                 </td><td>
-                                            <div class="control-group">											
-											<label class="control-label" for="firstname">Year Of experience</label>
-											<div class="controls">
                                             
-                                                <asp:TextBox ID="txtexpyear" runat="server" class="span3"></asp:TextBox>
-											</div> <!-- /controls -->				
-										</div>
                                                </td> </tr>
 </table>
 
-                                            <div class="">
-											
-                                            <asp:Button ID="Button2" runat="server" Text="Add Experience" class="btn btn-primary" 
-                                                onclick="Button2_Click"/>
-                                            
-											<asp:GridView ID="gvcust" runat="server" 
-                CssClass="table table-striped table-bordered" AutoGenerateColumns="False" EmptyDataText="No Mentor found">
-                <Columns>
-                    <asp:BoundField DataField="srno" HeaderText="No" />
-                    <asp:BoundField DataField="Company" HeaderText="Company Name" />
-                    <asp:BoundField DataField="exp" HeaderText="Experience" />
-                 
-                   
-                   <asp:TemplateField HeaderText="Update">
-                        <ItemTemplate>
-                            <asp:Button ID="Button2" runat="server" Text="Delete" 
-                                class="btn btn-small btn-success" CommandArgument='<%# Eval("mentor_id") %>' onclick="Button2_Click" 
-                                />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                     
-                </Columns>
-                
-            </asp:GridView>
-
-										</div>
+                                        
                                         <div>
                                             
                                         </div>
