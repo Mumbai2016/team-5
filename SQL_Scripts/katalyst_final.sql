@@ -38,7 +38,7 @@ END$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registermentee`(IN `fname1` varchar(160),IN `sname1` varchar(160),IN `address1` varchar(160),IN `dob1` varchar(160),IN `income` decimal,IN `mob` varchar(12),IN `org` varchar(200),IN `emailid1` varchar(200),In passwd varchar(150),IN `stat` int)
 BEGIN
 	if stat=0 THEN
-insert into mentee(fname,sname,dob,emailid,address,mobileno,annual_income,organization,created_by,edited_by,created_date,edited_date,passwrd) 
+insert into mentee(fname,sname,dob,emailid,address,mobileno,annual_income,organization,created_by,edited_by,created_date,edited_date,passwrd)
 values(fname1,sname1,dob1,emailid1,address1,mob,income,org,1,1,NOW(),NOW(),passwd);
 insert into user_detail(username,password,type,fkid,created_by,edited_by,created_date,edited_Date) values(emailid1,passwd,'mentee',@@identity,1,1,NOW(),NOW(),passwd);
 ELSE
@@ -50,7 +50,7 @@ END$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `registermentor`(IN `fname1` varchar(50),IN `lname1` varchar(100),IN `mname1` varchar(100),IN `dob1` varchar(100),IN `emailid` varchar(200),IN `passwd` varchar(150),IN `address1` varchar(200),IN `mobileno` varchar(10),IN `workexp` decimal,IN `int_time` decimal,IN `stat` int,in comp varchar(100))
 BEGIN
 if stat=0 THEN
-insert into mentor(fname,sname,mname,dob,email,password,address,mob,total_work_exp,time_investment,created_by,edited_by,created_date,edited_date,company) 
+insert into mentor(fname,sname,mname,dob,email,password,address,mob,total_work_exp,time_investment,created_by,edited_by,created_date,edited_date,company)
 values(fname1,lname1,mname1,dob1,emailid,passwd,address1,mobileno,workexp,int_time,1,1,NOW(),NOW(),comp);
 insert into user_detail(username,password,type,fkid,created_by,edited_by,created_date,edited_Date) values(emailid,passwd,'mentor',@@identity,1,1,NOW(),NOW());
 ELSE
@@ -86,8 +86,8 @@ CREATE TABLE IF NOT EXISTS `assign_mentor_mentee` (
   `mentee_id` int(5) NOT NULL,
   `created_by` varchar(40) NOT NULL,
   `edited_by` varchar(40) NOT NULL,
-  `created_date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
-  `edited_date` timestamp(6) NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
+  `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  ON UPDATE CURRENT_TIMESTAMP,
+  `edited_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00.000000',
   `stat` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
