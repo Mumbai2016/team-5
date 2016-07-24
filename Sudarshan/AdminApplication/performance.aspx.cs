@@ -12,7 +12,7 @@ using System.IO;
 using System.Text;
 using ClosedXML.Excel;
 
-public partial class Viewmeeting : System.Web.UI.Page
+public partial class performance : System.Web.UI.Page
 {
     MySqlConnection _con = new MySqlConnection(ConfigurationManager.ConnectionStrings["katalyst"].ConnectionString);
     protected void Page_Load(object sender, EventArgs e)
@@ -27,39 +27,39 @@ public partial class Viewmeeting : System.Web.UI.Page
             {
                 ddlyear.Items.Insert(0, "Selct Year");
                 int count = 1;
-                for (int i = 2016; i < 2030; i++) {
-                    ddlyear.Items.Insert(count,i + "");
+                for (int i = 2016; i < 2030; i++)
+                {
+                    ddlyear.Items.Insert(count, i + "");
                 }
-                    //search();
+                //search();
             }
         }
     }
 
-    
+
 
     protected void search()
     {
-        string tablename = "SELECT m.meet_date,m.meet_place,m.meet_time,CONCAT(mn.fname,' ',mn.sname) as mentor,concat(me.fname,' ',me.sname) as mentee "
-+" from mentee_notification_accept m INNER JOIN mentor mn "
-+" on m.mentor_id=mn.mentor_id "
-+" inner join mentee me "
-+ " on m.mentee_id=me.mentee_id where m.accept=1";
-        
-        if (ddlmonth.SelectedIndex > 0) {
-            tablename += "and MONTH(m.meet_date)="+ddlmonth.SelectedIndex.ToString()+" ";
+        string tablename = "SELECT CONCAT(fname,' ',sname) as name,count(*) as lectures "
++" from mentee_notification_accept mn inner join mentor m "
++" on mn.mentor_id=m.mentor_id "
++" where accept=2 ";
+
+
+        if (ddlmonth.SelectedIndex > 0)
+        {
+            tablename += "and MONTH(meet_date)=" + ddlmonth.SelectedIndex.ToString() + " ";
         }
         if (ddlyear.SelectedIndex > 0)
         {
-            tablename += " and YEAR(m.meet_date)="+ddlyear.SelectedItem.Text.ToString()+" ";
+            tablename += " and YEAR(meet_date)=" + ddlyear.SelectedItem.Text.ToString() + " ";
         }
-        tablename += " order by m.meet_date desc";
+        tablename += "group by mn.mentor_id,name";
         MySqlCommand _cmd = new MySqlCommand(tablename, _con);
         MySqlDataAdapter _adp = new MySqlDataAdapter(_cmd);
         DataTable _dt = new DataTable();
         _adp.Fill(_dt);
-        gvcust.DataSource = _dt;
-        gvcust.DataBind();
-        sendExcel(_dt, "Meetings");
+        sendExcel(_dt, "Performance");
     }
     protected void btnsearch_Click(object sender, EventArgs e)
     {
@@ -102,5 +102,5 @@ public partial class Viewmeeting : System.Web.UI.Page
         if (rk != null && rk.GetValue("Content Type") != null)
             mime = rk.GetValue("Content Type").ToString();
         return mime;
-    } 
+    }
 }
