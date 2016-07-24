@@ -1,7 +1,7 @@
 <?php
 	echo "<form method='POST' action='post.php'><input type='text' name = 'post'><input type='submit'/></form><br><table>";
 	require('con.php');
-	$sql  = "SELECT n.newsfeed_id, n.topic, m.fname, n.created_at FROM katalyst.newsfeed n INNER JOIN katalyst.mentor m ON n.mentor_id = m.mentor_id ORDER BY n.newsfeed_id DESC LIMIT 20 ";
+	$sql  = "SELECT n.newsfeed_id, n.topic, m.fname, n.created_at FROM katalyst.newsfeed n INNER JOIN katalyst.mentor m ON n.mentor_id = m.mentor_id ORDER BY n.newsfeed_id DESC LIMIT 20;";
 	$result = $conn->query($sql);
 	if($result == TRUE){
 		if ($result->num_rows > 0) {
