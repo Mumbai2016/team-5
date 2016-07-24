@@ -30,7 +30,7 @@ public partial class Viewmeeting : System.Web.UI.Page
                 for (int i = 2016; i < 2030; i++) {
                     ddlyear.Items.Insert(count,i + "");
                 }
-                    search();
+                    //search();
             }
         }
     }
@@ -43,7 +43,7 @@ public partial class Viewmeeting : System.Web.UI.Page
 +" from mentee_notification_accept m INNER JOIN mentor mn "
 +" on m.mentor_id=mn.mentor_id "
 +" inner join mentee me "
-+ " on m.mentee_id=me.mentee_id where m.accept=1 ";
++ " on m.mentee_id=me.mentee_id where m.accept=1";
         
         if (ddlmonth.SelectedIndex > 0) {
             tablename += "and MONTH(m.meet_date)="+ddlmonth.SelectedIndex.ToString()+" ";
