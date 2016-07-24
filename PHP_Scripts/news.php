@@ -6,7 +6,7 @@
 	if($result == TRUE){
 		if ($result->num_rows > 0) {
     		while($row = $result->fetch_assoc()) {
-        		echo "<a href='viewcomments.php?post_id=".$row["newsfeed_id"]."'</a> Topic : " . $row["topic"] . "<br>posted by  - ". $row["fname "] ." - at date time : " . $row["created_at"]; 
+        		echo "<a href='viewcomments.php?post_id=".$row["newsfeed_id"]."&topic=" . $row["topic"] . "'</a>".$row["topic"]."<br>posted by  - ". $row["fname"] ." - at date time : " . $row["created_at"]; 
         		echo '<br>';
         		echo '<br>';
 
