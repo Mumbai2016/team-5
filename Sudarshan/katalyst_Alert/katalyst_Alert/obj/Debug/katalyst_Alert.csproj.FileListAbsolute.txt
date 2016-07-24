@@ -1,0 +1,12 @@
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\katalyst_Alert.exe.config
+D:\katalyst_Alert\katalyst_Alert\obj\Debug\katalyst_Alert.csprojResolveAssemblyReference.cache
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\katalyst_Alert.exe
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\katalyst_Alert.pdb
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\ClosedXML.dll
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\DocumentFormat.OpenXml.dll
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\Excel.dll
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\MySql.Data.dll
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\MySql.Data.Entity.dll
+D:\katalyst_Alert\katalyst_Alert\bin\Debug\MySql.Web.dll
+D:\katalyst_Alert\katalyst_Alert\obj\Debug\katalyst_Alert.exe
+D:\katalyst_Alert\katalyst_Alert\obj\Debug\katalyst_Alert.pdb
