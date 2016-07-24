@@ -23,7 +23,7 @@
         <button type="button" class="btn btn-success btn-lg btn-block" onclick="location.href='menteebot.php'">Request meeting</button>
       </div>
       <div class="col-md-4" style="padding:50px;">
-        <button type="button" class="btn btn-success btn-lg btn-block" onclick="location.href='bootstrap.html'">Feedback of meeting</button>
+        <button type="button" class="btn btn-success btn-lg btn-block" onclick="location.href='bootstrap_mentee.html'">Feedback of meeting</button>
       </div>
     </div>
 </div>
